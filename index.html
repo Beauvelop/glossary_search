@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="eggApp1">
+
+<head>
+  <meta charset="utf-8">
+  <title>WordsDB</title>
+  <link rel="stylesheet" href="/css/master.css">
+</head>
+
+<body>
+  <div class="container" ng-controller="wordDataCtrl">
+  <h1>Vocab List</h1>
+  <p rollover="coral" rolloff>A bare-bones Angular ng-repeat over about 150 vocab words tagged with CS or vocab, etc. It's a proof-of-concept.<br>
+    There's also a completely gratuitous pair of custom directives that add/removeClass determining the color of this text.</p>
+    <h3>Search: <input ng-model="wordSearch.$" type="text" name="" value=""></h3>
+    <ol ng-repeat="vocab in data | filter: wordSearch | orderBy: 'word' | limitTo: 5">
+      <li>
+        <ul class="data-container">
+          <li>{{vocab.word}}</li><br>
+          <li>{{vocab.meaning}}</li><br>
+          <li>{{vocab.example}}</li>
+          <li class="tag">
+            <ul class="tags" ng-repeat="elem in vocab.tag">
+              <li class="tag-element">{{elem}}</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <!-- <div >
+  <input type="text" ng-model="data.msg">
+  <h3>Msg: {{data.msg}}</h3>
+</div> -->
+  <!-- <div ng-controller="firstCtrl" >
+  <input type="text" ng-model="data.message">
+  <h3>Msg: {{data.message | charTotal}}</h3>
+</div> -->
+  <!-- <div ng-controller="secondCtrl" >
+  <input type="text" ng-model="data.msg">
+  <h3>Msg: {{data.msg}}</h3>
+</div>
+
+
+
+
+
+<br><br>
+    <hr> vid 1: simply covers ng-model and data-binding
+    <br><input type="text" name="" value="" ng-model="msg">
+    <h3>Modeled message: <h4 class="">{{msg}}</h4></h3>
+    <h3>This app {{sucks}}</h3>
+
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="myctrl.js"></script>
+  <script src="firstCtrl.js"></script>
+  <script src="secondCtrl.js"></script>
+  <script src="myfacservice.js"></script>
+  <script src="charTotalFilter.js"></script>
+
+  <script src="wordFacservice.js"></script>
+  <script src="wordDataCtrl.js"></script>
+  <script src="rolloverDir.js"></script>
+  <script src="rolloffDir.js"></script>
+
+  <!-- <script src="app.js"></script>
+<script src="app.js"></script> -->
+</body>
+
+</html>
